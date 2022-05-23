@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family: 'Lora', serif;
+    box-sizing: border-box;
+}
+.gridContainer{
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+	"header"
+	"frase"
+	"obras"
+	"bio"
+	"videos"
+    "footer";
+    grid-template-rows: auto auto auto auto auto auto;
+}
+.item{
+    border: 2px solid black;
+}
+/*estilos de header*/
+.headerFlex{
+    grid-area: header;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+nav{
+    float: right;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+nav a{
+    text-decoration: none;
+}
+nav a:hover{
+    text-decoration: underline;
+}
+.item1{
+    display: flex;
+    flex-direction: column; 
+    width: 100%; 
+}
+/*contenido*/
+.item2{
+    grid-area: frase;
+    width: 100%;
+    color: white;
+    background-color: #363636;
+    text-align: center;
+    height: 250px;
+    font-style: italic;
+    font-size: 500%;
+    line-height: 30px;
+    padding: 50px;
+}
+.item3{
+    grid-area: obras;
+    min-height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    grid-template-areas: 
+    "img1"
+    "img2"
+    "img3" 
+    "img4";
+}
+.item h3{
+    background-color: white;
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+.item3 div{
+    border: 1px solid black;
+    height: 150px;
+    width: 150px;
+    background-size: cover;
+    background-position: center;
+}
+.img1{
+    background-image: url(imagenes/obra1.jpg);
+}
+.img2{
+    background-image: url(imagenes/obra2.jpg);
+}
+.img3{
+    background-image: url(imagenes/obra3.jpg);
+}
+.img4{
+    background-image: url(imagenes/obra4.jpg);
+}
+.item4{
+    grid-area: bio;
+    height: 300px;
+    color: white;
+    background-color: #363636;
+}
+.item5{
+    grid-area: videos;
+    min-height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+.item5 h3{
+    background-color: white;
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+.item5 iframe{
+    border: 2px solid black;
+}
+    /*estilos de footer*/
+.item6{
+    grid-area: footer;
+    min-height: 100px;
+    color: white;
+    background-color: #363636;
+    text-align: center;
+    padding: 20px;
+}
+.item6 p{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.item6 i{
+    font-size: 35px;
+    letter-spacing: 20px;
+}
+.item6 a{
+    color: white;
+}
+@media only screen and (min-width: 425px) and (max-width: 768px){
+    .headerFlex{
+        grid-area: header;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+/*pagina Bio*/
+.gridContainerBio{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+	"header header"
+	"titulo titulo"
+	"texto imagen"
+    "footer footer";
+}
+.headerBio{
+    grid-area: header;
+}
+.titulo{
+    grid-area: titulo;
+}
+.texto{
+    grid-area:texto;
+}
+.imagen{
+    grid-area:imagen;
+}
+/*footer*/
+.footerBio{
+    grid-area: footer;
+    min-height: 100px;
+    color: white;
+    background-color: #363636;
+    text-align: center;
+    padding: 20px;
+}
+.footerBio p{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.footerBio i{
+    font-size: 35px;
+    letter-spacing: 20px;
+}
+.footerBio a{
+    color: white;
+}
